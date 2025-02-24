@@ -68,45 +68,9 @@ Download and install the Arduino IDE from arduino.cc.
 
 Add Required Libraries:
 
-LiquidCrystal_I2C: For LCD communication.
-Upload the Code:
+LiquidCrystal_I2C: For LCD communication. [LiquidCrystal_I2C-master.zip](https://github.com/user-attachments/files/18938173/LiquidCrystal_I2C-master.zip)
 
-Open Eleta.ino from this repository in Arduino IDE.
-Select the correct board and port.
-Upload the code to your Arduino.
-Voice Commands
-Eleta responds to these voice commands sent via a Bluetooth app:
-
-Command	Action
-F	Move Forward
-B	Move Backward
-L	Turn Left
-R	Turn Right
-C	Draw a Circle
-Q	Draw a Square
-D	Dance
-S	Stop Movement
-Use any Bluetooth terminal app to send these commands.
-
-Troubleshooting
-If Eleta doesn’t work as expected, try the following:
-
-Check Connections: Ensure all components are connected securely.
-Bluetooth Pairing Issues: Confirm that the Bluetooth module is paired with your smartphone.
-Debugging Code: Look for error messages in the Arduino IDE and ensure all libraries are installed.
-Power Issues: Verify that the battery pack provides sufficient power to the motors and Arduino.
-Customization Ideas
-Take Eleta to the next level with these ideas:
-
-Add obstacle avoidance sensors for autonomous navigation.
-Integrate a camera for real-time object detection.
-Program advanced movement patterns like zigzag or spiral paths.
-Contributing
-Want to contribute to this project? 
-Great! Here’s how you can help:
-Driver:[LiquidCrystal_I2C-master.zip](https://github.com/user-attachments/files/18938124/LiquidCrystal_I2C-master.zip)
-Code:
-[#include <Wire.h>
+Upload the Code:[#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
 // LCD Configuration
@@ -285,6 +249,39 @@ void dance() {
 Uploading eleta_bot.ino…]()
 
 
+Open Eleta.ino from this repository in Arduino IDE.
+Select the correct board and port.
+Upload the code to your Arduino.
+Voice Commands
+Eleta responds to these voice commands sent via a Bluetooth app:
+
+Command	Action
+F	Move Forward
+B	Move Backward
+L	Turn Left
+R	Turn Right
+C	Draw a Circle
+Q	Draw a Square
+D	Dance
+S	Stop Movement
+Use any Bluetooth terminal app to send these commands.
+
+Troubleshooting
+If Eleta doesn’t work as expected, try the following:
+
+Check Connections: Ensure all components are connected securely.
+Bluetooth Pairing Issues: Confirm that the Bluetooth module is paired with your smartphone.
+Debugging Code: Look for error messages in the Arduino IDE and ensure all libraries are installed.
+Power Issues: Verify that the battery pack provides sufficient power to the motors and Arduino.
+Customization Ideas
+Take Eleta to the next level with these ideas:
+
+Add obstacle avoidance sensors for autonomous navigation.
+Integrate a camera for real-time object detection.
+Program advanced movement patterns like zigzag or spiral paths.
+Contributing
+Want to contribute to this project? 
+Great! Here’s how you can help:
 ![89311305_538861423431676_8615333972026589184_n (1)](https://github.com/user-attachments/assets/b7b201df-3f94-41d6-a95c-de5c26b595a5)
 
 Let’s Build Together!
