@@ -45,6 +45,7 @@ Chassis	1	Base to mount the components.
 Getting Started
 Hardware Setup
 Follow these steps to assemble the robot:
+![Eleta CKT](https://github.com/user-attachments/assets/e9c7b913-413e-412f-9209-123ab6253bf0)
 
 Motor Connections:
 
@@ -101,13 +102,189 @@ Add obstacle avoidance sensors for autonomous navigation.
 Integrate a camera for real-time object detection.
 Program advanced movement patterns like zigzag or spiral paths.
 Contributing
-Want to contribute to this project? Great! Here’s how you can help:
+Want to contribute to this project? 
+Great! Here’s how you can help:
+Driver:[LiquidCrystal_I2C-master.zip](https://github.com/user-attachments/files/18938124/LiquidCrystal_I2C-master.zip)
 
-Fork the repository.
-Make your changes.
-Submit a pull request.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Code:[#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// LCD Configuration
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Motor Pins
+#define MOTOR1_PIN1 3
+#define MOTOR1_PIN2 4
+#define MOTOR2_PIN1 5
+#define MOTOR2_PIN2 6
+
+// Bluetooth Input
+char command = 'S'; // Default command is Stop
+
+void setup() {
+  // LCD Initialization
+  lcd.init(); // Correct initialization for most LiquidCrystal_I2C libraries
+  lcd.backlight();
+
+  // Motor Pins Setup
+  pinMode(MOTOR1_PIN1, OUTPUT);
+  pinMode(MOTOR1_PIN2, OUTPUT);
+  pinMode(MOTOR2_PIN1, OUTPUT);
+  pinMode(MOTOR2_PIN2, OUTPUT);
+
+  // Bluetooth Communication
+  Serial.begin(9600);
+
+  // Display Welcome Message
+  lcd.setCursor(0, 0);
+  lcd.print("Electro Fest-04");
+  lcd.setCursor(0, 1);
+  lcd.print("My name is Eleta");
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Created by:");
+  lcd.setCursor(0, 1);
+  lcd.print("Rakibul & Sadi");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop() {
+  // Check if Bluetooth sends a command
+  if (Serial.available()) {
+    command = Serial.read();
+    executeCommand(command);
+  }
+}
+
+void executeCommand(char cmd) {
+  lcd.clear();
+  switch (cmd) {
+    case 'S': // Stop
+      stopMotors();
+      lcd.print("Command: Stop");
+      break;
+    case 'F': // Forward
+      forward();
+      lcd.print("Command: Forward");
+      break;
+    case 'B': // Backward
+      backward();
+      lcd.print("Command: Backward");
+      break;
+    case 'L': // Left
+      turnLeft();
+      lcd.print("Command: Left");
+      break;
+    case 'R': // Right
+      turnRight();
+      lcd.print("Command: Right");
+      break;
+    case 'C': // Circle
+      makeCircle();
+      lcd.print("Command: Circle");
+      break;
+    case 'Q': // Square
+      makeSquare();
+      lcd.print("Command: Square");
+      break;
+    case 'H': // Hexagon
+      makeHexagon();
+      lcd.print("Command: Hexagon");
+      break;
+    case 'D': // Dance
+      dance();
+      lcd.print("Command: Dance");
+      break;
+    case 'T': // Start
+      lcd.print("Command: Start");
+      break;
+    default:
+      lcd.print("Unknown Cmd");
+      break;
+  }
+}
+
+void forward() {
+  digitalWrite(MOTOR1_PIN1, HIGH);
+  digitalWrite(MOTOR1_PIN2, LOW);
+  digitalWrite(MOTOR2_PIN1, HIGH);
+  digitalWrite(MOTOR2_PIN2, LOW);
+}
+
+void backward() {
+  digitalWrite(MOTOR1_PIN1, LOW);
+  digitalWrite(MOTOR1_PIN2, HIGH);
+  digitalWrite(MOTOR2_PIN1, LOW);
+  digitalWrite(MOTOR2_PIN2, HIGH);
+}
+
+void turnLeft() {
+  digitalWrite(MOTOR1_PIN1, LOW);
+  digitalWrite(MOTOR1_PIN2, HIGH);
+  digitalWrite(MOTOR2_PIN1, HIGH);
+  digitalWrite(MOTOR2_PIN2, LOW);
+}
+
+void turnRight() {
+  digitalWrite(MOTOR1_PIN1, HIGH);
+  digitalWrite(MOTOR1_PIN2, LOW);
+  digitalWrite(MOTOR2_PIN1, LOW);
+  digitalWrite(MOTOR2_PIN2, HIGH);
+}
+
+void stopMotors() {
+  digitalWrite(MOTOR1_PIN1, LOW);
+  digitalWrite(MOTOR1_PIN2, LOW);
+  digitalWrite(MOTOR2_PIN1, LOW);
+  digitalWrite(MOTOR2_PIN2, LOW);
+}
+
+void makeCircle() {
+  for (int i = 0; i < 10; i++) {
+    turnRight();
+    delay(300);
+  }
+  stopMotors();
+}
+
+void makeSquare() {
+  for (int i = 0; i < 4; i++) {
+    forward();
+    delay(1000);
+    turnRight();
+    delay(500);
+  }
+  stopMotors();
+}
+
+void makeHexagon() {
+  for (int i = 0; i < 6; i++) {
+    forward();
+    delay(800);
+    turnRight();
+    delay(400);
+  }
+  stopMotors();
+}
+
+void dance() {
+  for (int i = 0; i < 5; i++) {
+    forward();
+    delay(500);
+    backward();
+    delay(500);
+    turnLeft();
+    delay(500);
+    turnRight();
+    delay(500);
+  }
+  stopMotors();
+}
+Uploading eleta_bot.ino…]()
+
+
 ![89311305_538861423431676_8615333972026589184_n (1)](https://github.com/user-attachments/assets/b7b201df-3f94-41d6-a95c-de5c26b595a5)
 
 Let’s Build Together!
