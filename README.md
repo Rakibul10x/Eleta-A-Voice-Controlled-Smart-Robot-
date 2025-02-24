@@ -105,8 +105,8 @@ Contributing
 Want to contribute to this project? 
 Great! Here’s how you can help:
 Driver:[LiquidCrystal_I2C-master.zip](https://github.com/user-attachments/files/18938124/LiquidCrystal_I2C-master.zip)
-
-Code:[#include <Wire.h>
+Code:
+[#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
 // LCD Configuration
