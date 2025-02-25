@@ -8,32 +8,34 @@
 <body>
 
 <h1 align="center">🤖 Eleta: A Voice-Controlled Robotic System</h1>
-<h2 align="center">🚀 Bringing Hands-Free Control to Robotics</h2>
+<h2 align="center">🚀 Bringing Automation & Intelligence to Robotics</h2>
 
 <hr>
 
-<h2>🎯 The Problem</h2>
+<h2>🔍 The Problem</h2>
 
-<p>Robots are becoming an integral part of daily life, yet traditional control methods like remotes or manual programming can be inefficient and restrictive.</p>
+<p>Manually controlling robots with buttons or remotes can be inefficient and outdated. What if a robot could <b>understand voice commands</b> and respond instantly?</p>
 
-<p>Wouldn’t it be great if you could control a robot just by <b>speaking to it</b>? 🎙️</p>
+<p>Traditional robot control methods limit accessibility, especially for those with disabilities. A voice-controlled system can revolutionize <b>personal assistance, automation, and interactive robotics</b>.</p>
 
 <hr>
 
 <h2>💡 The Smart Solution</h2>
 
-<p><b>Eleta</b> is a <b>voice-controlled robotic system</b> that responds to spoken commands, making robotic control <b>effortless, intuitive, and futuristic</b>. It integrates <b>speech recognition, automation, and mobility</b> to create a truly hands-free experience.</p>
+<p><b>Eleta</b> is an intelligent, voice-controlled robotic system designed to <b>respond to verbal commands</b> and execute various movements like forward, backward, turning, and even performing predefined patterns.</p>
+
+<p>Built for hobbyists, students, and tech enthusiasts, Eleta is a <b>step forward</b> in <b>automation and smart robotics</b>.</p>
 
 <hr>
 
 <h2>🚀 Features</h2>
 
 <ul>
-    <li>✅ <b>Voice-Controlled Movement</b> – Commands like "Move Forward" and "Turn Left" work seamlessly.</li>
-    <li>✅ <b>Speech Recognition</b> – Uses AI-based voice recognition technology.</li>
-    <li>✅ <b>Wireless Communication</b> – Bluetooth module for seamless command processing.</li>
-    <li>✅ <b>Obstacle Avoidance</b> – Ultrasonic sensors to detect and avoid obstacles.</li>
-    <li>✅ <b>Easy DIY Build</b> – Perfect for students and hobbyists.</li>
+    <li>✅ <b>Voice-Controlled Movements</b> – Command Eleta to move in any direction.</li>
+    <li>✅ <b>Predefined Shapes</b> – Make Eleta move in a circle, square, or hexagon.</li>
+    <li>✅ <b>Bluetooth Communication</b> – Control the robot wirelessly.</li>
+    <li>✅ <b>LCD Display</b> – Shows real-time commands and actions.</li>
+    <li>✅ <b>Easy-to-Build</b> – Simple and effective for robotics enthusiasts.</li>
 </ul>
 
 <hr>
@@ -41,41 +43,10 @@
 <h2>🛠️ How It Works</h2>
 
 <ul>
-    <li>🔹 A <b>Microphone Module</b> captures the user's voice commands.</li>
-    <li>🔹 The <b>ESP32/Arduino</b> processes the commands and controls the motors.</li>
-    <li>🔹 A <b>Bluetooth module</b> enables wireless communication with a mobile app.</li>
-    <li>🔹 <b>Ultrasonic sensors</b> help navigate and avoid obstacles.</li>
-</ul>
-
-<hr>
-
-<h2>✨ Key Process Flow</h2>
-<ol>
-    <li>User speaks a command (e.g., "Move Forward").</li>
-    <li>The <b>microphone module</b> processes the audio input.</li>
-    <li>The <b>ESP32/Arduino</b> translates the command into motor actions.</li>
-    <li>The robot moves accordingly and avoids obstacles.</li>
-    <li>Users enjoy a hands-free, futuristic robotic experience! 🤖</li>
-</ol>
-
-<hr>
-
-<h2>🌍 Why This Project Matters for the Future?</h2>
-
-<ul>
-    <li>✅ <b>Accessibility</b> – Helps individuals with mobility impairments control devices effortlessly.</li>
-    <li>✅ <b>Human-Robot Interaction</b> – Enhancing intuitive interaction between humans and machines.</li>
-    <li>✅ <b>Smart Automation</b> – Paving the way for AI-driven robotic assistants.</li>
-</ul>
-
-<hr>
-
-<h2>🔮 Future Enhancements</h2>
-
-<ul>
-    <li>🚀 <b>AI-Powered Voice Recognition</b> – Improving accuracy with machine learning.</li>
-    <li>📶 <b>Wi-Fi Connectivity</b> – Enabling remote operation via cloud services.</li>
-    <li>🦾 <b>Gesture Control</b> – Integrating hand gestures for an even richer control experience.</li>
+    <li>🔹 A <b>Bluetooth module</b> receives voice commands from a paired device.</li>
+    <li>🔹 An <b>Arduino</b> processes the command and executes the corresponding movement.</li>
+    <li>🔹 A <b>motor driver circuit</b> controls the movement of the robot.</li>
+    <li>🔹 An <b>LCD screen</b> displays the received commands.</li>
 </ul>
 
 <hr>
@@ -83,12 +54,12 @@
 <h2>📜 Project Components</h2>
 
 <ul>
-    <li><b>ESP32/Arduino</b></li>
-    <li><b>Bluetooth Module (HC-05)</b></li>
-    <li><b>Microphone Module</b></li>
+    <li><b>Arduino Uno</b></li>
+    <li><b>HC-05 Bluetooth Module</b></li>
     <li><b>Motor Driver (L298N)</b></li>
-    <li><b>Ultrasonic Sensors</b></li>
-    <li><b>Rechargeable Battery</b></li>
+    <li><b>12V DC Motors</b></li>
+    <li><b>16x2 LCD Display with I2C</b></li>
+    <li><b>Power Supply</b></li>
 </ul>
 
 <hr>
@@ -96,31 +67,93 @@
 <h2>🖥️ Arduino Code</h2>
 
 <pre>
-#include &lt;SoftwareSerial.h&gt;
-#define motor1 5
-#define motor2 6
-SoftwareSerial BT(10, 11); // RX, TX
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// LCD Configuration
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Motor Pins
+#define MOTOR1_PIN1 3
+#define MOTOR1_PIN2 4
+#define MOTOR2_PIN1 5
+#define MOTOR2_PIN2 6
+
+// Bluetooth Input
+char command = 'S'; // Default command is Stop
 
 void setup() {
-    pinMode(motor1, OUTPUT);
-    pinMode(motor2, OUTPUT);
-    BT.begin(9600);
+  // LCD Initialization
+  lcd.init(); // Correct initialization for most LiquidCrystal_I2C libraries
+  lcd.backlight();
+
+  // Motor Pins Setup
+  pinMode(MOTOR1_PIN1, OUTPUT);
+  pinMode(MOTOR1_PIN2, OUTPUT);
+  pinMode(MOTOR2_PIN1, OUTPUT);
+  pinMode(MOTOR2_PIN2, OUTPUT);
+
+  // Bluetooth Communication
+  Serial.begin(9600);
+
+  // Display Welcome Message
+  lcd.setCursor(0, 0);
+  lcd.print("Electro Fest-04");
+  lcd.setCursor(0, 1);
+  lcd.print("My name is Eleta");
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Created by:");
+  lcd.setCursor(0, 1);
+  lcd.print("Rakibul & Sadi");
+  delay(2000);
+  lcd.clear();
 }
 
 void loop() {
-    if (BT.available()) {
-        char command = BT.read();
-        if (command == 'F') {
-            digitalWrite(motor1, HIGH);
-            digitalWrite(motor2, LOW);
-        } else if (command == 'B') {
-            digitalWrite(motor1, LOW);
-            digitalWrite(motor2, HIGH);
-        } else {
-            digitalWrite(motor1, LOW);
-            digitalWrite(motor2, LOW);
-        }
-    }
+  // Check if Bluetooth sends a command
+  if (Serial.available()) {
+    command = Serial.read();
+    executeCommand(command);
+  }
+}
+
+void executeCommand(char cmd) {
+  lcd.clear();
+  switch (cmd) {
+    case 'S': stopMotors(); lcd.print("Command: Stop"); break;
+    case 'F': forward(); lcd.print("Command: Forward"); break;
+    case 'B': backward(); lcd.print("Command: Backward"); break;
+    case 'L': turnLeft(); lcd.print("Command: Left"); break;
+    case 'R': turnRight(); lcd.print("Command: Right"); break;
+    case 'C': makeCircle(); lcd.print("Command: Circle"); break;
+    case 'Q': makeSquare(); lcd.print("Command: Square"); break;
+    case 'H': makeHexagon(); lcd.print("Command: Hexagon"); break;
+    case 'D': dance(); lcd.print("Command: Dance"); break;
+    default: lcd.print("Unknown Cmd"); break;
+  }
+}
+
+void forward() {
+  digitalWrite(MOTOR1_PIN1, HIGH);
+  digitalWrite(MOTOR1_PIN2, LOW);
+  digitalWrite(MOTOR2_PIN1, HIGH);
+  digitalWrite(MOTOR2_PIN2, LOW);
+}
+
+void backward() {
+  digitalWrite(MOTOR1_PIN1, LOW);
+  digitalWrite(MOTOR1_PIN2, HIGH);
+  digitalWrite(MOTOR2_PIN1, LOW);
+  digitalWrite(MOTOR2_PIN2, HIGH);
+}
+
+void stopMotors() {
+  digitalWrite(MOTOR1_PIN1, LOW);
+  digitalWrite(MOTOR1_PIN2, LOW);
+  digitalWrite(MOTOR2_PIN1, LOW);
+  digitalWrite(MOTOR2_PIN2, LOW);
 }
 </pre>
 
@@ -129,29 +162,20 @@ void loop() {
 <h2>🏆 Project Outcomes</h2>
 
 <ul>
-    <li>🎙️ <b>Hands-free robot control</b> via voice commands.</li>
-    <li>🦾 Users experience <b>seamless human-robot interaction</b>.</li>
+    <li>🤖 The robot follows <b>voice commands</b> and executes movements accordingly.</li>
+    <li>📡 Users can <b>remotely control</b> the robot via Bluetooth.</li>
+    <li>🎯 Enables easy <b>robotic automation</b> without complex interfaces.</li>
 </ul>
 
 <hr>
 
 <h2>📽️ Project Demos</h2>
 
-<p>🚀 Watch our system in action! (Add YouTube link here)</p>
+<p>🚀 Watch Eleta in action! (Add YouTube link here)</p>
 
 <hr>
 
-<h2>📌 Contribution & Support</h2>
-
-<p>If you love this project, consider giving it a ⭐ and contributing to its future enhancements!</p>
-
-<p>📩 Feel free to <b>fork</b>, <b>improve</b>, and <b>submit a pull request</b> to add new features.</p>
-
-<p>For any queries or suggestions, reach out to <b><a href="mailto:rakibul10x@gmail.com">rakibul10x@gmail.com</a></b>.</p>
-
-<hr>
-
-<h2>🔗 Let's Build the Future Together! 🌍✨</h2>
+<h2>🔗 Get Involved & Build Your Own Eleta!</h2>
 
 <p>🚀 <b>Clone the Repository & Start Building:</b></p>
 
