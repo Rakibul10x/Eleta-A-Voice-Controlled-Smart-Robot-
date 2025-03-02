@@ -171,15 +171,32 @@ void stopMotors() {
 
 <h2>📽️ Project Demos</h2>
 
-<p> 
-![89242073_538861933431625_296384186879574016_n](https://github.com/user-attachments/assets/a29732ad-7f8a-44df-a87e-4e9ef01f55d8)
-![89352277_538862210098264_7225080047885877248_n](https://github.com/user-attachments/assets/c50b95c2-a9b5-41c8-b84b-3330f949aa8c)
-![89311305_538861423431676_8615333972026589184_n (1)](https://github.com/user-attachments/assets/539b469e-62a4-4acd-bc49-dee1b705301f)
-![89311305_538861423431676_8615333972026589184_n](https://github.com/user-attachments/assets/647c3ab9-47a9-4ec0-8618-48a69d91e16c)
-![87148058_538860676765084_6000465463115513856_n](https://github.com/user-attachments/assets/afd212f8-a1a9-4b15-a336-73d437b22375)
-![IMG_20200309_140727](https://github.com/user-attachments/assets/5e781053-a765-40b6-b69f-222295aa5021)
+<h2>📽️ Project Demos</h2>
 
-</p>
+<p>Here are some snapshots from our demo and testing phase:</p>
+
+<table align="center" border="0" cellpadding="10">
+    <tr>
+        <td align="center">
+            <img src="eleta_demo1.jpg" alt="Eleta in Action - Forward Motion" width="300">
+            <p>Moving Forward</p>
+        </td>
+        <td align="center">
+            <img src="eleta_demo2.jpg" alt="Eleta Turning Left" width="300">
+            <p>Turning Left</p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <img src="eleta_demo3.jpg" alt="Eleta Performing Circle Command" width="300">
+            <p>Performing Circle Command</p>
+        </td>
+        <td align="center">
+            <img src="eleta_demo4.jpg" alt="Eleta at Electro Fest-04" width="300">
+            <p>Showcasing at Electro Fest-04</p>
+        </td>
+    </tr>
+</table>
 
 <hr>
 
