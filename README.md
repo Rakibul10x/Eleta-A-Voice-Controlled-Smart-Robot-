@@ -180,17 +180,17 @@ void stopMotors() {
             <p>📸 Eleta interacting with human</p>
         </td>
         <td align="center">
-            <img src="eleta_voice_command.jpg" alt="Eleta Listening to Voice Commands" width="300">
+            <img src="Eleta Listening to Voice Commands.jpg" alt="Eleta Listening to Voice Commands" width="300">
             <p>📸 Eleta listening to voice commands</p>
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="eleta_showcase.jpg" alt="Eleta Showcasing at Electro Fest-04" width="300">
+            <img src="Eleta Showcasing at Electro Fest-04.jpg" alt="Eleta Showcasing at Electro Fest-04" width="300">
             <p>📸 Project showcasing at Electro Fest-04</p>
         </td>
         <td align="center">
-            <img src="eleta_award.jpg" alt="Eleta Winning Award at Electro Fest-04" width="300">
+            <img src="Eleta Winning Award at Electro Fest-04.jpg" alt="Eleta Winning Award at Electro Fest-04" width="300">
             <p>🏆 Prize-giving ceremony</p>
         </td>
     </tr>
