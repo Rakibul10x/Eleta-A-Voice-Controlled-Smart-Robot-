@@ -176,7 +176,7 @@ void stopMotors() {
 <table align="center" border="0" cellpadding="10">
     <tr>
         <td align="center">
-            <img src="eleta_interact.jpg" alt="Eleta Interacting with Human" width="300">
+            <img src="[eleta_interact.jpg](https://github.com/Rakibul10x/Eleta-A-Voice-Controlled-Smart-Robot-/blob/7f2f9064404322c082fbd24741cf4b6ade023746/Eleta%20Interacting%20with%20Human.jpg)" alt="Eleta Interacting with Human" width="300">
             <p>📸 Eleta interacting with human</p>
         </td>
         <td align="center">
