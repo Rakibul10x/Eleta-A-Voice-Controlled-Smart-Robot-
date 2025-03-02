@@ -171,29 +171,27 @@ void stopMotors() {
 
 <h2>📽️ Project Demos</h2>
 
-<h2>📽️ Project Demos</h2>
-
-<p>Here are some snapshots from our demo and testing phase:</p>
+<p>Here are some project show snapshots:</p>
 
 <table align="center" border="0" cellpadding="10">
     <tr>
         <td align="center">
-            <img src="Eleta.jpg" alt="Eleta in Action - Forward Motion" width="300">
-            <p>Moving Forward</p>
+            <img src="eleta_interact.jpg" alt="Eleta Interacting with Human" width="300">
+            <p>📸 Eleta interacting with human</p>
         </td>
         <td align="center">
-            <img src="eleta_demo2.jpg" alt="Eleta Turning Left" width="300">
-            <p>Turning Left</p>
+            <img src="eleta_voice_command.jpg" alt="Eleta Listening to Voice Commands" width="300">
+            <p>📸 Eleta listening to voice commands</p>
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="eleta_demo3.jpg" alt="Eleta Performing Circle Command" width="300">
-            <p>Performing Circle Command</p>
+            <img src="eleta_showcase.jpg" alt="Eleta Showcasing at Electro Fest-04" width="300">
+            <p>📸 Project showcasing at Electro Fest-04</p>
         </td>
         <td align="center">
-            <img src="eleta_demo4.jpg" alt="Eleta at Electro Fest-04" width="300">
-            <p>Showcasing at Electro Fest-04</p>
+            <img src="eleta_award.jpg" alt="Eleta Winning Award at Electro Fest-04" width="300">
+            <p>🏆 Prize-giving ceremony</p>
         </td>
     </tr>
 </table>
