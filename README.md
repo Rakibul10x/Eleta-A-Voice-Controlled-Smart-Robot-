@@ -178,7 +178,8 @@ void stopMotors() {
 <table align="center" border="0" cellpadding="10">
     <tr>
         <td align="center">
-            <img src="eleta_demo1.jpg" alt="Eleta in Action - Forward Motion" width="300">
+            <img src="![Eleta](https://github.com/user-attachments/assets/d6795e68-2b9a-4d59-ad4a-c3b888d22958)
+ " alt="Eleta in Action - Forward Motion" width="300">
             <p>Moving Forward</p>
         </td>
         <td align="center">
